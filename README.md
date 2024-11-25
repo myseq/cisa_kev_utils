@@ -11,7 +11,7 @@ Previously, those utils are stored separately at [kev-dashboard](https://github.
 This is a simple util that generate a dashboard for CISA's KEV.
 
 This tool is written in python, and it can display the dashboard in two (2) modes: **text mode** or **ASCII chart mode**. 
-This tools is created after I got inspirehttps://www.cisa.gov/sites/default/files/csv/known_exploited_vulnerabilities.csvd by 2 things: 
+This tools is created after I got inspired by 2 things: 
 
  - Kenna EPSS distribution per cve/vendor (very cool) and 
  - the command line utility (termgraph) that draws basic graphs in the terminal. 
