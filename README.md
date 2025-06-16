@@ -2,6 +2,13 @@
 
 This repo hosts a daily GH action to scrape CISA's KEV catalogs including some utilities for CISA KEV.
 
+   | Files | Desc
+-- | ----- | ----
+ 1 | cisa_kev.json | Latest JSON
+ 2 | cisa_kev-old.json | Last-1 JSON
+ 2 | .github/workflows/scraper.yml | Scraper
+
+
 ## Archived Repos
 
 This repos has consolidated from the following repos previously.
@@ -19,17 +26,18 @@ This repos has consolidated from the following repos previously.
 </dl>
 
 
-## Links
-
- - [kev-dashboard](https://github.com/myseq/kev-dashboard) *[archived]*
- - [kev-catalog](https://github.com/myseq/kev-catalog) *[archived]*
- - [cisa-known-exploited-vulns](https://github.com/myseq/cisa-known-exploited-vulns) *[archived]*
- - [Termgraph](https://github.com/mkaz/termgraph) - Great utility to draw basic charts (Bar chart, Historgram, heatmap, etc) in the terminal.
-
 ## MySeq Blog
 
  - <https://myseq.blogspot.com/2022/03/cisa-known-exploited-vuln-catalog.html>
  - <https://myseq.blogspot.com/2022/04/publish-kev-catalog-on-github.html>
  - <https://myseq.blogspot.com/2022/04/kev-dashboard.html>
+
+
+## Links
+
+ - [Termgraph](https://github.com/mkaz/termgraph) - Great utility to draw basic charts (Bar chart, Historgram, heatmap, etc) in the terminal.
+ - [kev-dashboard](https://github.com/myseq/kev-dashboard) *[archived]*
+ - [kev-catalog](https://github.com/myseq/kev-catalog) *[archived]*
+ - [cisa-known-exploited-vulns](https://github.com/myseq/cisa-known-exploited-vulns) *[archived]*
 
 
