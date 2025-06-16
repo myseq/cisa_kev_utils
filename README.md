@@ -2,8 +2,8 @@
 
 This repo hosts a daily GH action to scrape CISA's KEV catalogs including some utilities for CISA KEV.
 
-|   | Files | Desc |
-| - | ----- | ---- |
+|   | File | Description |
+| - | ---- | ----------- |
 | 1 | cisa_kev.json | Latest JSON |
 | 2 | cisa_kev-old.json | Last-1 JSON |
 | 3 | .github/workflows/scraper.yml | Daily scraper |
