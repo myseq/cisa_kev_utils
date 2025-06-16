@@ -28,7 +28,7 @@ This repos has consolidated from the following repos previously.
 </dl>
 
 
-## MySeq Blog
+## Blog Posts
 
  - <https://myseq.blogspot.com/2022/03/cisa-known-exploited-vuln-catalog.html>
  - <https://myseq.blogspot.com/2022/04/publish-kev-catalog-on-github.html>
@@ -37,6 +37,7 @@ This repos has consolidated from the following repos previously.
 
 ## Links
 
+ - [KEV-data](https://github.com/cisagov/kev-data) - Home to the KEV data files.
  - [Termgraph](https://github.com/mkaz/termgraph) - Great utility to draw basic charts (Bar chart, Historgram, heatmap, etc) in the terminal.
  - [kev-dashboard](https://github.com/myseq/kev-dashboard) *[archived]*
  - [kev-catalog](https://github.com/myseq/kev-catalog) *[archived]*
