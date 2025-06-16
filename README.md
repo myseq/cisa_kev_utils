@@ -6,13 +6,13 @@ This repo hosts a daily GH action to scrape CISA's KEV catalogs including some u
 
 This repos has consolidated from the following repos previously.
 
- - [kev-dashboard](https://github.com/myseq/kev-dashboard) *[archived]*
  - [kev-catalog](https://github.com/myseq/kev-catalog) *[archived]*
  - [cisa-known-exploited-vulns](https://github.com/myseq/cisa-known-exploited-vulns) *[archived]*
 
 <dl>
   <dt>KEV-Dashboard</dt>
   <dd>This is a simple util that generates a dashboard for CISA's KEV.</dd>
+  <dd>[kev-dashboard](https://github.com/myseq/kev-dashboard) *[archived]*</dd>
 
   <dt>KEV-Catalog</dt>
   <dd>This util shows some catalogs, such as top-N vendors and top-N vulnerabile products, found in the CISA's KEV.</dd>
