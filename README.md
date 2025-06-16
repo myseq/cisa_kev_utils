@@ -10,45 +10,18 @@ This repos has consolidated from the following repos previously.
  - [kev-catalog](https://github.com/myseq/kev-catalog) *[archived]*
  - [cisa-known-exploited-vulns](https://github.com/myseq/cisa-known-exploited-vulns) *[archived]*
 
-First Term
-: This is the definition of the first term.
+<dl>
+  <dt>KEV-Dashboard</dt>
+  <dd>This is a simple util that generates a dashboard for CISA's KEV.</dd>
 
-Second Term
-: This is one definition of the second term.
-: This is another definition of the second term.
+  <dt>KEV-Catalog</dt>
+  <dd>This util shows some catalogs, such as top-N vendors and top-N vulnerabile products, found in the CISA's KEV.</dd>
 
-KEV-Dashboard
-: This is a simple util that generate a dashboard for CISA's KEV.
+  <dt>CISA-Known-Exploited-Vulns</dt>
+  <dd>This repo will run daily GH action to scrape CISA's KEV catalog and store in `docs/`.</dd>
 
-### KEV-Dashboard
+</dl>
 
-This is a simple util that generate a dashboard for CISA's KEV.
-
-This tool is written in python, and it can display the dashboard in two (2) modes: **text mode** or **ASCII chart mode**. 
-This tools is created after I got inspired by 2 things: 
-
- - Kenna EPSS distribution per cve/vendor (very cool) and 
- - the command line utility (termgraph) that draws basic graphs in the terminal. 
-
-So I decided to take up the challenge to create a similar tool for both the idea.
-
-### KEV-Catalog
-
-This util show catalog of Known Exploited Vulnerabilities (KEV) from CISA.
-
-This tool is written in Python to shows the top-N vendors and the top-N vulnerable products found in the CISA's KEV. 
-It also can search a specific CVE or keyword in the KEV json file.
-
-It includes the function:
-
- - To save the JSON file from CISA website.
- - Perform local search based on JSON file.
-
-### cisa-known-exploited-vulns
-
-Code with daily GH action to scrape CISA's KEV Catalog (https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
-
-Each scrape is prefixed with an ISO stamp and stored in docs/ as that dir is published via GH Pages.
 
 ## Links
 
