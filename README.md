@@ -10,6 +10,13 @@ This repos has consolidated from the following repos previously.
  - [kev-catalog](https://github.com/myseq/kev-catalog) *[archived]*
  - [cisa-known-exploited-vulns](https://github.com/myseq/cisa-known-exploited-vulns) *[archived]*
 
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+
 KEV-Dashboard
 : This is a simple util that generate a dashboard for CISA's KEV.
 
