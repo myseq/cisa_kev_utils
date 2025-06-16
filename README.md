@@ -1,12 +1,17 @@
 # CISA KEV
 
-This repo hosts some utilities for CISA KEV.
+This repo hosts a daily GH action to scrape CISA's KEV catalogs.
+It also includes some utilities for CISA KEV.
 
-Previously, those utils are stored separately at [kev-dashboard](https://github.com/myseq/kev-dashboard) and [kev-catalog](https://github.com/myseq/kev-catalog).
+## Archives Repos
 
-> Both repos are in archives mode.
+This repos has consolidated from the following repos previously.
 
-## KEV-Dashboard
+ - [kev-dashboard](https://github.com/myseq/kev-dashboard) *[archived]*
+ - [kev-catalog](https://github.com/myseq/kev-catalog) *[archived]*
+ - [cisa-known-exploited-vulns](https://github.com/myseq/cisa-known-exploited-vulns) *[archived]*
+
+### KEV-Dashboard
 
 This is a simple util that generate a dashboard for CISA's KEV.
 
@@ -18,7 +23,7 @@ This tools is created after I got inspired by 2 things:
 
 So I decided to take up the challenge to create a similar tool for both the idea.
 
-## KEV-Catalog
+### KEV-Catalog
 
 This util show catalog of Known Exploited Vulnerabilities (KEV) from CISA.
 
@@ -29,6 +34,12 @@ It includes the function:
 
  - To save the JSON file from CISA website.
  - Perform local search based on JSON file.
+
+### cisa-known-exploited-vulns
+
+Code with daily GH action to scrape CISA's KEV Catalog (https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+
+Each scrape is prefixed with an ISO stamp and stored in docs/ as that dir is published via GH Pages.
 
 ## Links
 
