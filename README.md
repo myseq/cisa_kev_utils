@@ -10,6 +10,7 @@ This repo hosts a daily GH action to scrape CISA's KEV catalogs including some u
 | 4 | kev-dashboard.py | See below |
 | 5 | kev-catalog.py | See below |
 | 6 | json_diff.py | Util: to diff the 2 JSON files and updates `changes.md` | 
+| 7 | [changes.md](/changes.md) | Diffs between `cisa_kev.json` and `cisa_kev-old.json` | 
 
 
 ## Archived Repos
