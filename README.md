@@ -9,6 +9,7 @@ This repo hosts a daily GH action to scrape CISA's KEV catalogs including some u
 | 3 | .github/workflows/scraper.yml | Daily scraper |
 | 4 | kev-dashboard.py | See below |
 | 5 | kev-catalog.py | See below |
+| 6 | json_diff.py | Util: to diff the 2 JSON files and updates `changes.md` | 
 
 
 ## Archived Repos
