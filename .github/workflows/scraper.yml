@@ -1,5 +1,8 @@
 name: Daily Scraper 
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
   schedule:
