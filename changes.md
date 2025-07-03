@@ -2,5 +2,4 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2025-07-01 | TeleMessage | TM SGNL | CVE-2025-48927 |
-| 2025-07-01 | TeleMessage | TM SGNL | CVE-2025-48928 |
+| 2025-07-02 | Google | Chromium V8 | CVE-2025-6554 |
