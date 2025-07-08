@@ -29,7 +29,7 @@ jobs:
     - name: Compare changes
       id: check_diff
       run: |
-        python3 json_diff.py
+        python3 json_diff.py || true
         EXIT_CODE=$?
         echo "Exit code from json_diff.py: $EXIT_CODE"
         echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
@@ -42,7 +42,7 @@ jobs:
         echo "Is exit_code non-zero? ${{ steps.check_diff.outputs.exit_code != '0' }}"
 
     - name: Check if any new JSON
-      if: ${{ steps.check_diff.outputs.exit_code == '0' }}
+      if: ${{ steps.check_diff.outputs.exit_code != '0' }}
       run: |
         echo "json_diff.py detected differences (exit code: ${{ steps.check_diff.outputs.exit_code }})"
 
