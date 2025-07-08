@@ -1,5 +1,5 @@
 
-name: CISA KEV Scraper
+name: Daily Scraper
 
 permissions:
   contents: write
@@ -10,7 +10,7 @@ on:
     - cron: '8 16 * * *'
 
 jobs:
-  Daily_Scraper:
+  CISA-KEV:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,24 +21,35 @@ jobs:
       id: scraper
       run: curl --silent --output cisa_kev-download.json https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
 
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
     - name: Compare changes
       id: check_diff
       run: |
-        ls -l *.json
         python3 json_diff.py
-        echo "exit_code=$?" >> $GITHUB_OUTPUT
-        cat $GITHUB_OUTPUT
+        EXIT_CODE=$?
+        echo "Exit code from json_diff.py: $EXIT_CODE"
+        echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+        cat $GITHUB_OUTPUT  # Debug: Show contents of $GITHUB_OUTPUT
       continue-on-error: true
+
+    - name: Debug exit code
+      run: |
+        echo "Exit code from check_diff step: ${{ steps.check_diff.outputs.exit_code }}"
+        echo "Is exit_code non-zero? ${{ steps.check_diff.outputs.exit_code != '0' }}"
 
     - name: Check if any new JSON
       if: ${{ steps.check_diff.outputs.exit_code != '0' }}
       run: |
-        echo "check_diff returned exit code: ${{ steps.check_diff.outputs.exit_code }}"
+        echo "json_diff.py detected differences (exit code: ${{ steps.check_diff.outputs.exit_code }})"
 
     - name: Backup JSON
       if: ${{ steps.check_diff.outputs.exit_code != '0' }}
       run: |
-        mv cisa_kev.json cisa_kev-old.json
+        [ -f cisa_kev.json ] && mv cisa_kev.json cisa_kev-old.json || echo "No existing cisa_kev.json to backup"
         mv cisa_kev-download.json cisa_kev.json
 
     - name: Commit changes
@@ -48,6 +59,5 @@ jobs:
         git config user.email "actions@users.noreply.github.com"
         git add -A
         timestamp=$(date -u)
-        git commit -m "Update JSON: ${timestamp}" || exit 0
+        git commit -m "Update JSON: ${timestamp}" || echo "No changes to commit"
         git push
-
