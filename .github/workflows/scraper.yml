@@ -24,6 +24,7 @@ jobs:
     - name: Compare changes
       id: check_diff
       run: |
+        ls -l *.json
         python3 json_diff.py
         echo "exit_code=$?" >> $GITHUB_OUTPUT
       continue-on-error: true
