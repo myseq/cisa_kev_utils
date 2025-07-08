@@ -27,7 +27,7 @@ jobs:
         ls -l *.json
         python3 json_diff.py
         echo "exit_code=$?" >> $GITHUB_OUTPUT
-        echo $GITHUB_OUTPUT
+        cat $GITHUB_OUTPUT
       continue-on-error: true
 
     - name: Check if any new JSON
