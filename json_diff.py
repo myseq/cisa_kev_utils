@@ -59,7 +59,7 @@ def json_diff(file1_path, file2_path):
         if DEBUG:
             show_diff(vulns1,vulns2)
             print(f'')
-        sys.exit(1)
+        #sys.exit(1)
 
 
 json_diff('cisa_kev-download.json', 'cisa_kev-old.json')
