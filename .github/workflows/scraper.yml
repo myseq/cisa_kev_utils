@@ -16,22 +16,28 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
 
-    - name: Backup JSON
-      run: mv cisa_kev.json cisa_kev-old.json
-
     - name: Scrape CISA KEV
-      run: curl --silent --output cisa_kev.json https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+      run: curl --silent --output cisa_kev-download.json https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
 
     - name: Compare changes
       run: python3 json_diff.py
 
-    - name: Commit changes
-      run: |-
-        git config user.name "Automated"
-        git config user.email "actions@users.noreply.github.com"
-        git add -A
-        timestamp=$(date -u)
-        git commit -m "Update JSON: ${timestamp}" || exit 0
-        git push
+    - name: Check if any new JSON
+      if env.$? > 0
+      run: 
+
+      - name: Backup JSON
+        run: |-
+          mv cisa_kev.json cisa_kev-old.json
+          mv cisa_kev-download.json cisa_kev.json
+
+      - name: Commit changes
+        run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          timestamp=$(date -u)
+          git commit -m "Update JSON: ${timestamp}" || exit 0
+          git push
 
 
