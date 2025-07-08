@@ -26,6 +26,7 @@ jobs:
       run: |
         ls -l *.json
         python3 json_diff.py
+        echo $?
         echo "exit_code=$?" >> $GITHUB_OUTPUT
       continue-on-error: true
 
