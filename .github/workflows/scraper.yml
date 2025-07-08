@@ -30,9 +30,6 @@ jobs:
         echo $GITHUB_OUTPUT
       continue-on-error: true
 
-    - name: Show exit code 
-      run: echo "check_diff returned exit code: ${{ steps.check_diff.outputs.exit_code }}"
-
     - name: Check if any new JSON
       if: ${{ steps.check_diff.outputs.exit_code != '0' }}
       run: |
