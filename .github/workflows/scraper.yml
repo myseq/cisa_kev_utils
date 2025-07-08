@@ -17,14 +17,20 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Scrape CISA KEV
+      id: scraper
       run: curl --silent --output cisa_kev-download.json https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
 
     - name: Compare changes
-      run: python3 json_diff.py
+      id: check_diff
+      run: |
+        python3 json_diff.py
+        echo "exist_code=$?" >> $GITHUB_OUTPUT
+      continue-on-error: true
 
     - name: Check if any new JSON
-      if env.$? > 0
-      run: 
+      if stesp.check_diff.outputs.exit_code != '0'
+      run: |
+        echo "check_diff return exit code: ${{ steps.check_diff.outputs.exit_code }}"
 
       - name: Backup JSON
         run: |-
