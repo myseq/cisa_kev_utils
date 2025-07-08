@@ -1,4 +1,5 @@
-name: Daily Scraper 
+
+name: Daily Scraper
 
 permissions:
   contents: write
@@ -24,26 +25,27 @@ jobs:
       id: check_diff
       run: |
         python3 json_diff.py
-        echo "exist_code=$?" >> $GITHUB_OUTPUT
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
       continue-on-error: true
 
     - name: Check if any new JSON
-      if steps.check_diff.outputs.exit_code != '0'
+      if: ${{ steps.check_diff.outputs.exit_code != '0' }}
       run: |
-        echo "check_diff return exit code: ${{ steps.check_diff.outputs.exit_code }}"
+        echo "check_diff returned exit code: ${{ steps.check_diff.outputs.exit_code }}"
 
-      - name: Backup JSON
-        run: |-
-          mv cisa_kev.json cisa_kev-old.json
-          mv cisa_kev-download.json cisa_kev.json
+    - name: Backup JSON
+      if: ${{ steps.check_diff.outputs.exit_code != '0' }}
+      run: |
+        mv cisa_kev.json cisa_kev-old.json
+        mv cisa_kev-download.json cisa_kev.json
 
-      - name: Commit changes
-        run: |-
-          git config user.name "Automated"
-          git config user.email "actions@users.noreply.github.com"
-          git add -A
-          timestamp=$(date -u)
-          git commit -m "Update JSON: ${timestamp}" || exit 0
-          git push
-
+    - name: Commit changes
+      if: ${{ steps.check_diff.outputs.exit_code != '0' }}
+      run: |
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Update JSON: ${timestamp}" || exit 0
+        git push
 
