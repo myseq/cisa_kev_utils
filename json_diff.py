@@ -3,6 +3,8 @@ import json
 DEBUG = True
 
 def show_diff(vulns1, vulns2):
+    """ Show the differences and write changes into changes.md """
+
     cve_list1 = [ vuln.get('cveID') for vuln in vulns1 ]
     cve_list2 = [ vuln.get('cveID') for vuln in vulns2 ]
 
@@ -34,6 +36,8 @@ def show_diff(vulns1, vulns2):
 
 
 def json_diff(file1_path, file2_path):
+    """ Open the 2 files and check the differences """
+
     with open(file1_path, 'r') as f1, open(file2_path, 'r') as f2:
         json1 = json.load(f1)
         json2 = json.load(f2)

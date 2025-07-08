@@ -1,5 +1,5 @@
 
-name: Daily Scraper
+name: CISA KEV Scraper
 
 permissions:
   contents: write
@@ -10,7 +10,7 @@ on:
     - cron: '8 16 * * *'
 
 jobs:
-  CISA-KEV:
+  Daily_Scraper:
     runs-on: ubuntu-latest
 
     steps:
