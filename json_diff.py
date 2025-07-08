@@ -1,4 +1,5 @@
 import json 
+import sys
 
 DEBUG = True
 
@@ -50,7 +51,7 @@ def json_diff(file1_path, file2_path):
 
     if count1 == count2:
         print("JSON files are identical.")
-        exit 0
+        sys.exit(0)
     else:
         print(f' * {file1_path} : {count1}/{len(vulns1)}')
         print(f' * {file2_path} : {count2}/{len(vulns2)}')
@@ -58,7 +59,7 @@ def json_diff(file1_path, file2_path):
         if DEBUG:
             show_diff(vulns1,vulns2)
             print(f'')
-        exit 1
+        sys.exit(1)
 
 
 json_diff('cisa_kev-download.json', 'cisa_kev-old.json')
