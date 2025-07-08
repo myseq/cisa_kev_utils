@@ -1,5 +1,5 @@
 import json 
-import sys
+import sys, os
 
 DEBUG = True
 
@@ -49,9 +49,12 @@ def json_diff(file1_path, file2_path):
     vulns1 = json1.get('vulnerabilities')
     vulns2 = json2.get('vulnerabilities')
 
+    result = 0
+    github_output = os.getenv("GITHUB_OUTPUT")
+
     if count1 == count2:
         print("JSON files are identical.")
-        sys.exit(0)
+        #sys.exit(0)
     else:
         print(f' * {file1_path} : {count1}/{len(vulns1)}')
         print(f' * {file2_path} : {count2}/{len(vulns2)}')
@@ -59,7 +62,15 @@ def json_diff(file1_path, file2_path):
         if DEBUG:
             show_diff(vulns1,vulns2)
             print(f'')
-        sys.exit(1)
+        result = 1
+        #sys.exit(1)
+
+    if github_output:
+        with open(github_output, "a") as f:
+            f.write(f'exit_code={result}\n')
+        print(f'Set exit_code={result} in $GITHUB_OUTPUT')
+    else:
+        print(f'GITHUB_OUTPUT not set, running locally or not in GitHub Actions.\n')
 
 
 json_diff('cisa_kev-download.json', 'cisa_kev-old.json')
