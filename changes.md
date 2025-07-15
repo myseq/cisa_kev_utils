@@ -2,4 +2,4 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2025-07-10 | Citrix | NetScaler ADC and Gateway | CVE-2025-5777 |
+| 2025-07-14 | Wing FTP Server | Wing FTP Server | CVE-2025-47812 |
