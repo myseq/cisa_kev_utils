@@ -2,6 +2,9 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2025-07-22 | Microsoft | SharePoint | CVE-2025-49704 |
-| 2025-07-20 | Microsoft | SharePoint | CVE-2025-53770 |
+| 2025-07-22 | CrushFTP | CrushFTP | CVE-2025-54309 |
 | 2025-07-22 | Microsoft | SharePoint | CVE-2025-49706 |
+| 2025-07-22 | Google | Chromium | CVE-2025-6558 |
+| 2025-07-22 | Microsoft | SharePoint | CVE-2025-49704 |
+| 2025-07-22 | SysAid | SysAid On-Prem | CVE-2025-2776 |
+| 2025-07-22 | SysAid | SysAid On-Prem | CVE-2025-2775 |
