@@ -2,4 +2,4 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2025-09-11 | Dassault Systèmes | DELMIA Apriso | CVE-2025-5086 |
+| 2025-09-23 | Google | Chromium V8 | CVE-2025-10585 |
