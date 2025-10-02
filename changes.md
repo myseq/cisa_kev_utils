@@ -2,8 +2,8 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2025-09-29 | Adminer | Adminer | CVE-2021-21311 |
-| 2025-09-29 | Fortra | GoAnywhere MFT | CVE-2025-10035 |
-| 2025-09-29 | Cisco | IOS and IOS XE | CVE-2025-20352 |
-| 2025-09-29 | Libraesva | Email Security Gateway | CVE-2025-59689 |
-| 2025-09-29 | Sudo | Sudo | CVE-2025-32463 |
+| 2025-10-02 | GNU | GNU Bash | CVE-2014-6278 |
+| 2025-10-02 | Smartbedded | Meteobridge | CVE-2025-4008 |
+| 2025-10-02 | Juniper | ScreenOS | CVE-2015-7755 |
+| 2025-10-02 | Samsung | Mobile Devices | CVE-2025-21043 |
+| 2025-10-02 | Jenkins | Jenkins | CVE-2017-1000353 |
