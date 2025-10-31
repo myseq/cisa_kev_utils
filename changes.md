@@ -2,5 +2,5 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2025-10-28 | Dassault Systèmes | DELMIA Apriso | CVE-2025-6205 |
-| 2025-10-28 | Dassault Systèmes | DELMIA Apriso | CVE-2025-6204 |
+| 2025-10-30 | XWiki | Platform | CVE-2025-24893 |
+| 2025-10-30 | Broadcom | VMware Aria Operations and VMware Tools | CVE-2025-41244 |
