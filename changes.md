@@ -2,5 +2,4 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2025-11-04 | CWP | Control Web Panel | CVE-2025-48703 |
-| 2025-11-04 | Gladinet | CentreStack and Triofox | CVE-2025-11371 |
+| 2025-11-10 | Samsung | Mobile Devices | CVE-2025-21042 |
