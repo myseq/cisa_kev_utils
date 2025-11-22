@@ -2,4 +2,4 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2025-11-19 | Google | Chromium V8 | CVE-2025-13223 |
+| 2025-11-21 | Oracle | Fusion Middleware | CVE-2025-61757 |
