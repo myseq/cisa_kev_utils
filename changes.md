@@ -2,4 +2,4 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2026-01-13 | Microsoft | Windows | CVE-2026-20805 |
+| 2026-01-21 | Cisco | Unified Communications Manager | CVE-2026-20045 |
