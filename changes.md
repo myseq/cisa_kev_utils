@@ -2,4 +2,6 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2026-01-29 | Ivanti | Endpoint Manager Mobile (EPMM) | CVE-2026-1281 |
+| 2026-02-03 | Sangoma | FreePBX | CVE-2019-19006 |
+| 2026-02-03 | Sangoma | FreePBX  | CVE-2025-64328 |
+| 2026-02-03 | GitLab | Community and Enterprise Editions | CVE-2021-39935 |
