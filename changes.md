@@ -2,4 +2,5 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2026-02-03 | SolarWinds | Web Help Desk | CVE-2025-40551 |
+| 2026-02-05 | SmarterTools | SmarterMail | CVE-2026-24423 |
+| 2026-02-05 | React Native Community | CLI | CVE-2025-11953 |
