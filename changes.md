@@ -2,9 +2,7 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2026-02-10 | Microsoft | Windows | CVE-2026-21525 |
-| 2026-02-10 | Microsoft | Windows | CVE-2026-21510 |
-| 2026-02-10 | Microsoft | Windows | CVE-2026-21533 |
-| 2026-02-10 | Microsoft | Windows | CVE-2026-21519 |
-| 2026-02-10 | Microsoft | Office | CVE-2026-21514 |
-| 2026-02-10 | Microsoft | Windows | CVE-2026-21513 |
+| 2026-02-12 | SolarWinds | Web Help Desk | CVE-2025-40536 |
+| 2026-02-12 | Microsoft | Configuration Manager | CVE-2024-43468 |
+| 2026-02-12 | Notepad++ | Notepad++ | CVE-2025-15556 |
+| 2026-02-12 | Apple | Multiple Products | CVE-2026-20700 |
