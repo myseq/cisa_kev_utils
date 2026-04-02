@@ -1,0 +1,25 @@
+name: Check CISA KEV
+
+on:
+  workflow_dispatch:   
+  schedule:
+    - cron: '8 18 * * *' # Run daily 
+
+jobs:
+  check-kev:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fetch KEV JSON
+        run: |
+          curl -s --output kev.json https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+      
+      - name: Parse and Check (Example: Find CVEs added in last 24h)
+        run: |
+          # Use 'jq' to filter entries added today
+          TODAY=$(date +%Y-%m-%d)
+          cat kev.json | jq --arg date "$TODAY" '.vulnerabilities[] | select(.dateAdded == $date)' > new_threats.json
+          
+      - name: Alert if new threats found
+        if: hashFiles('new_threats.json') != ''
+        run: echo "New exploited vulnerabilities detected!"
