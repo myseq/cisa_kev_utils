@@ -2,4 +2,4 @@
 
 | Date | Vendor | Product | CVE |
 | ---- | ------ | ------- | --- |
-| 2026-03-30 | Citrix | NetScaler | CVE-2026-3055 |
+| 2026-04-01 | Google | Dawn | CVE-2026-5281 |
