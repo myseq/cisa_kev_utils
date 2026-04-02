@@ -35,7 +35,7 @@ jobs:
           fi
 
       - name: Update README
-        if: steps:parse_step.outputs.found == 'true'
+        if: steps.parse_step.outputs.found == 'true'
         run: |
           # Add table header if README is empty or table doesn't exist
           if ! grep -q "| date | vendor | product | CVE |" README2.md; then
@@ -48,7 +48,7 @@ jobs:
           cat new_rows.txt >> README2.md
           
       - name: Commit and Push
-        if: steps:parse_step.outputs.found == 'true'
+        if: steps.parse_step.outputs.found == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
