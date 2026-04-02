@@ -1,25 +1,56 @@
 name: Check CISA KEV
 
 on:
-  workflow_dispatch:   
+  workflow_dispatch:   # Allow manual trigger
   schedule:
-    - cron: '8 18 * * *' # Run daily 
+    - cron: '8 8 * * *' # Run daily at midnight
 
 jobs:
   check-kev:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Necessary to push changes to README.md
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Fetch KEV JSON
         run: |
-          curl -s --output kev.json https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
-      
-      - name: Parse and Check 
+          curl --silent --output kev.json https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json  
+
+      - name: Parse and Check
+        id: parse_step
         run: |
-          # Use 'jq' to filter entries added today
           TODAY=$(date +%Y-%m-%d)
-          cat kev.json | jq --arg date "$TODAY" '.vulnerabilities[] | select(.dateAdded == $date)' > new_threats.json
+          # Filter entries and format as Markdown table rows
+          jq -r --arg date "$TODAY" '.vulnerabilities[] | select(.dateAdded == $date) | "| \(.dateAdded) | \(.vendorProject) | \(.product) | \(.cveID) |"' kev.json > new_rows.txt
           
-      - name: Alert if new threats found
-        if: hashFiles('new_threats.json') != ''
-        run: echo "New exploited vulnerabilities detected!"
+          # Check if any new vulnerabilities were found
+          if [ -s new_rows.txt ]; then
+            echo "found=true" >> $GITHUB_OUTPUT
+          else
+            echo "found=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update README
+        if: steps:parse_step.outputs.found == 'true'
+        run: |
+          # Add table header if README is empty or table doesn't exist
+          if ! grep -q "| date | vendor | product | CVE |" README2.md; then
+            echo -e "\n## New Exploited Vulnerabilities\n" >> README2.md
+            echo "| date | vendor | product | CVE |" >> README2.md
+            echo "|------|--------|---------|-----|" >> README2.md
+          fi
+          
+          # Append the new rows
+          cat new_rows.txt >> README2.md
+          
+      - name: Commit and Push
+        if: steps:parse_step.outputs.found == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git commit -m "Update README with new CISA KEV entries for $(date +%Y-%m-%d)"
+          git push
