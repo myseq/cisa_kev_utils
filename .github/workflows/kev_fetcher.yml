@@ -14,7 +14,7 @@ jobs:
         run: |
           curl -s --output kev.json https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
       
-      - name: Parse and Check (Example: Find CVEs added in last 24h)
+      - name: Parse and Check 
         run: |
           # Use 'jq' to filter entries added today
           TODAY=$(date +%Y-%m-%d)
