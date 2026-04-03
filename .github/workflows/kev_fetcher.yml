@@ -23,7 +23,6 @@ jobs:
         id: parse_step
         run: |
           TODAY=$(date +%Y-%m-%d)
-          TODAY=2026-03-30
           # Filter entries and format as Markdown table rows
           jq -r --arg date "$TODAY" '.vulnerabilities[] | select(.dateAdded == $date) | "| \(.dateAdded) | \(.vendorProject) | \(.product) | \(.cveID) |"' kev.json > new_rows.txt
           
