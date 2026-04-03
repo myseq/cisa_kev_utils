@@ -46,22 +46,24 @@ jobs:
           #  echo "|------|--------|---------|-----|" >> README2.md
           #fi
           
-          # Append the new rows
-          echo -e "\n# CISA KEV & Utils\n" >> README2.md
+          # Create the README.md
+          echo -e "\n# CISA KEV & Utils\n" > README2.md
           echo -e "\nThis repo hosts a daily GH action to scrape CISA's KEV catalogs.\n" >> README2.md
           echo -e "\n## New Exploited Vulnerabilities\n" >> README2.md
+          echo -e "\nBelow are the new KEV ($TODAY):\n" >> README2.md
           echo "| Date | Vendor | Product | CVE |" >> README2.md
           echo "|------|--------|---------|-----|" >> README2.md
           cat new_rows.txt >> README2.md
           cat README2.txt >> README2.md
           mv README2.md README.md
+          rm new_rows.txt
           
       - name: Commit and Push
         if: steps.parse_step.outputs.found == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add README.md 
+          git add .
           git commit -m "Update README with new CISA KEV entries for $(date +%Y-%m-%d)"
           git push
 
