@@ -49,7 +49,7 @@ jobs:
           echo -e "\n# CISA KEV & Utils\n" > README2.md
           echo -e "\nThis repo hosts a daily GH action to scrape CISA's KEV catalogs.\n" >> README2.md
           echo -e "\n## New Exploited Vulnerabilities\n" >> README2.md
-          echo -e "\nBelow are the new KEV ($TODAY):\n" >> README2.md
+          echo -e "\nBelow are the new KEV for $(date +%Y-%m-%d):\n" >> README2.md
           echo "| Date | Vendor | Product | CVE |" >> README2.md
           echo "|------|--------|---------|-----|" >> README2.md
           cat new_rows.txt >> README2.md
