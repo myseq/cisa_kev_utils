@@ -1,10 +1,4 @@
 
-## New Exploited Vulnerabilities
-
-| date | vendor | product | CVE |
-|------|--------|---------|-----|
-| 2026-03-30 | Citrix | NetScaler | CVE-2026-3055 |
-
 # CISA KEV & Utils
 
 
@@ -12,6 +6,9 @@ This repo hosts a daily GH action to scrape CISA's KEV catalogs.
 
 
 ## New Exploited Vulnerabilities
+
+
+Below are the new KEV ():
 
 | Date | Vendor | Product | CVE |
 |------|--------|---------|-----|
